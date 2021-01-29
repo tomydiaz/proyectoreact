@@ -6,6 +6,7 @@ const App = () => {
   return (
     <>
       <NavBarComponent />
+      <div>Hola</div>
     </>
   );
 }
