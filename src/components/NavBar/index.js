@@ -1,7 +1,10 @@
+import Logo from "../../images/logo.jpg";
+
 const NavBarComponent = () => {
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+                <img src={Logo} alt="logo cucalambe" className="logo" />
                 <a class="navbar-brand" href="#">Cabañas Cucalambé</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
