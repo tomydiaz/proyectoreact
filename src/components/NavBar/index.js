@@ -1,4 +1,5 @@
 import Logo from "../../images/logo.jpg";
+import CartWidgetComponent from "../CartWidget/index.js";
 
 const NavBarComponent = () => {
     return (
@@ -17,6 +18,7 @@ const NavBarComponent = () => {
                         <a class="nav-item nav-link" href="#">Nosotros</a>
                         <a class="nav-item nav-link" href="#">Contacto</a>
                     </div>
+                    <CartWidgetComponent />
                 </div>
             </nav>
         </>
