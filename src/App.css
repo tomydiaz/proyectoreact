@@ -11,3 +11,9 @@
   width: 16.24vmin ;
   margin-right: 2em;
 }
+
+#cartLogo {
+  width: 2em;
+  height: 2em;
+  margin-left: 1em;
+}

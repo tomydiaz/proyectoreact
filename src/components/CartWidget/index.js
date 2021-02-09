@@ -1,10 +1,9 @@
-import Cart from "../../images/cart.png";
-
+import Cart from "../../images/cart.png"
 
 const CartWidgetComponent = () => {
     return (
         <>
-            <img alt="" src={Cart}/>
+            <img src={Cart} alt="cart" id="cartLogo"/>
         </>
     )
 }
