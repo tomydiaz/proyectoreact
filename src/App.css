@@ -17,3 +17,9 @@
   height: 2em;
   margin-left: 1em;
 }
+
+.button {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 15px;
+}
