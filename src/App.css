@@ -23,3 +23,14 @@
   padding-right: 20px;
   margin: 15px;
 }
+
+.card {
+  border:1px black solid !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.cardContainer {
+  display: flex;
+}
