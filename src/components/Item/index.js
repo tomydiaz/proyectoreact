@@ -1,11 +1,10 @@
 const Item = ({producto}) => {
     return(
         <>
-            <div  className="card">
+            <div  className="cardEnContainer">
                 <h3 className="textoCard">{producto.name}</h3>            
                 <p className="textoCard">Habitaciones: {producto.habitaciones}</p>
                 <p className="textoCard">Baños: {producto.baños}</p>
-                <p className="textoCard">Metros cuadrados: {producto.mtsCuadrados}</p>
             </div>
         </>
     )

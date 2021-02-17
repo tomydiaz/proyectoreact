@@ -19,18 +19,42 @@
 }
 
 .button {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px;
   margin: 15px;
+  display: inline;
 }
 
 .card {
   border:1px black solid !important;
   margin-left: auto;
   margin-right: auto;
+  width: 40%;
+  padding: 30px;
+}
+
+.imgDetail {
+  width: 100%;
+}
+
+.cardEnContainer {
+  
+  border:1px black solid !important;
+  margin-left: auto;
+  margin-right: auto;
   width: 20%;
+  padding: 30px;
+
 }
 
 .cardContainer {
   display: flex;
+}
+
+#cont {
+  margin: 0px auto 0px auto;
+}
+
+.stockText {
+  margin-left: auto;
+  margin-right: auto;
 }
