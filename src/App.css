@@ -36,6 +36,10 @@
   width: 100%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .cardEnContainer {
   
   border:1px black solid !important;

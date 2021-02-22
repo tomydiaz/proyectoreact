@@ -1,6 +1,6 @@
 import Logo from "../../images/logo.jpg";
 import CartWidgetComponent from "../CartWidget/index.js";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBarComponent = () => {
     return (
@@ -13,12 +13,20 @@ const NavBarComponent = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <div className="nav-item nav-link"><Link to={`/`}>Inicio</Link></div>
-                        <div className="nav-item nav-link"><Link to={`/cabañas`}>Cabañas</Link></div>
-                        <div className="nav-item nav-link"><Link to={`/detail`}>Detail</Link></div>
-                        <div className="nav-item nav-link">Servicios</div>
-                        <div className="nav-item nav-link">Nosotros</div>
-                        <div className="nav-item nav-link">Contacto</div>
+                        <div><NavLink to={`/`}  className="nav-item nav-link" activeClassName="seleccionado">Inicio</NavLink></div>
+                        <div><NavLink to={`/productos`}  className="nav-item nav-link" activeClassName="seleccionado">Productos</NavLink></div>
+                        <li className="nav-item dropdown">
+                            <div className="nav-link  pointer" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</div>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <NavLink to={`/categoria/1`} className="dropdown-item">Remeras</NavLink>
+                                    <NavLink to={`/categoria/2`} className="dropdown-item">Buzos</NavLink>
+                                    <NavLink to={`/categoria/3`} className="dropdown-item">Pantalones</NavLink>
+                                </div>
+                        </li>
+                        <div><NavLink to={`/detail`}  className="nav-item nav-link" activeClassName="seleccionado">Detail</NavLink></div>
+                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Servicios</NavLink></div>
+                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Nosotros</NavLink></div>
+                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Contacto</NavLink></div>
                     </div>
                     <CartWidgetComponent />
                 </div>
