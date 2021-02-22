@@ -25,7 +25,7 @@ const App = () => {
             <ItemListContainer/>
           </Route>
 
-          <Route exact path="/detail">
+          <Route exact path="/detail/:productoId">
             <ItemDetailContainer/>
           </Route>
 

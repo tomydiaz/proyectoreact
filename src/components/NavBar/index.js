@@ -23,10 +23,6 @@ const NavBarComponent = () => {
                                     <NavLink to={`/categoria/3`} className="dropdown-item">Pantalones</NavLink>
                                 </div>
                         </li>
-                        <div><NavLink to={`/detail`}  className="nav-item nav-link" activeClassName="seleccionado">Detail</NavLink></div>
-                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Servicios</NavLink></div>
-                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Nosotros</NavLink></div>
-                        <div><NavLink to={`*`}  className="nav-item nav-link" activeClassName="seleccionado">Contacto</NavLink></div>
                     </div>
                     <CartWidgetComponent />
                 </div>
