@@ -1,15 +1,17 @@
 const ItemCount = (props) => {
     return(
         <>
+        <div className="contDetail">
             <b className="stockText">Stock: {props.stock}</b>
 
-            <button onClick={() => { props.onSupr() }} className="button"> - </button>
+            <button onClick={() => { props.onSupr() }} className="botonCont"> - </button>
 
             <b id="cont">{props.contador}</b>
 
-            <button onClick={() => { props.onAdd(props.stock) }} className="button"> + </button>
+            <button onClick={() => { props.onAdd(props.stock) }} className="botonCont"> + </button>
             
-            <button onClick={() => { props.agregadoCarrito() }}className="button"> Agregar al carrito </button>
+            <button onClick={() => { props.agregadoCarrito()}} className="botonCarrito"> Agregar al carrito ({props.contador} unidades) </button>
+        </div>
         </>
     )
 }

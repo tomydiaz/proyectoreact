@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+h3 {
+  flex-wrap: wrap;
+}
+
+p {
+  flex-wrap: wrap;
+}
+
 .title {
   font-size: 200%;
 }
@@ -40,13 +48,10 @@
   cursor: pointer;
 }
 
-.cardEnContainer {
-  
-  border:1px black solid !important;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+.cardEnContainer {  
+  border:1px black solid;
   padding: 30px;
+  margin: 20px
 
 }
 
@@ -55,10 +60,25 @@
 }
 
 #cont {
-  margin: 0px auto 0px auto;
+  margin: 0px 1em 0px 1em;
 }
 
 .stockText {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px 1em 0px 1em;
+}
+
+.botonCont {
+  display: inline;
+  margin: 5px;
+  width: 60px;
+}
+
+.botonCarrito {
+  width: 150px;
+  margin: 0px 3em 0px 3em;
+}
+
+.contDetail {
+  display: flex;
+  align-items: center;
 }

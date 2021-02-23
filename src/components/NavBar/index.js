@@ -12,7 +12,7 @@ const NavBarComponent = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div className="navbar-nav">
                         <div><NavLink to={`/`}  className="nav-item nav-link" activeClassName="seleccionado">Inicio</NavLink></div>
                         <div><NavLink to={`/productos`}  className="nav-item nav-link" activeClassName="seleccionado">Productos</NavLink></div>
                         <li className="nav-item dropdown">

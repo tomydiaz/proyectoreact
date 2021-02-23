@@ -38,7 +38,8 @@ const ItemDetailContainer = () => {
     }
 
     const agregadoCarrito = () => {
-        alert("Agregado al carrito!")
+        alert("Agregada/s " + contador + " unidad/es al carrito!")
+        setContador(1)
     }
 
     return(
