@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ItemDetail from "../ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import productList from "../../mocks/productList.js"
 
 const ItemDetailContainer = () => {
@@ -8,6 +8,23 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
 
     const { productoId } = useParams();
+
+    //////
+
+    const [contador, setContador] = useState(1)
+
+    const sumar = (stock) => {
+        if(contador < stock) {
+            setContador(contador + 1)
+        }
+    }
+
+    const restar = () => {
+        if (contador > 1) {
+            setContador(contador - 1)
+        }
+    }
+
 
     useEffect(()=> {
 
@@ -21,30 +38,12 @@ const ItemDetailContainer = () => {
 
         }
 
-    },[productoId])
+    },[productoId, contador])
 
-    const [contador, setContador] = useState(1)
-
-    const onAdd = (stock) => {
-        if(contador < stock) {
-            setContador(contador + 1)
-        }
-    }
-
-    const onSupr = () => {
-        if (contador > 1) {
-            setContador(contador - 1)
-        }
-    }
-
-    const agregadoCarrito = () => {
-        alert("Agregada/s " + contador + " unidad/es al carrito!")
-        setContador(1)
-    }
-
+    
     return(
         <>
-            <ItemDetail producto={producto} contador= {contador} onAdd= {onAdd} onSupr= {onSupr} agregadoCarrito= {agregadoCarrito}/>
+            <ItemDetail producto={producto} contador= {contador} sumar= {sumar} restar= {restar}/>
         </>
     )
 }

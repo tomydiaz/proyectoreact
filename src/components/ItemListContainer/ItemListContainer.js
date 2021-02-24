@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import productList from "../../mocks/productList.js";
-import ItemList from "../ItemList";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
@@ -25,8 +25,6 @@ const ItemListContainer = () => {
         } else {
             setProductos(productList)
         }
-
-        
 
         return {
 
