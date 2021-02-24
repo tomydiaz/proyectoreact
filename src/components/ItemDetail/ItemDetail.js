@@ -21,7 +21,7 @@ const ItemDetail = (props) => {
                 <p className="textoCard"><b>Habitaciones:</b> {props.producto.habitaciones}</p>
                 <p className="textoCard"><b>Baños: </b>{props.producto.baños}</p>
                 <p className="textoCard"><b>Descripcion: </b>{props.producto.descripcion}</p>
-                <ItemCount stock = {12} onAdd= {onAdd} agregarCarrito= {agregarCarrito} contador = {props.contador} sumar = {props.sumar} restar = {props.restar} />
+                <ItemCount productoId={props.productoId} stock = {12} onAdd= {onAdd} agregarCarrito= {agregarCarrito} contador = {props.contador} sumar = {props.sumar} restar = {props.restar} />
             </div>
             
         </>

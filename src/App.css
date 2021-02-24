@@ -61,7 +61,9 @@ p {
 }
 
 .terminarCompra {
-  margin: 10px auto 0 auto;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #cont {
@@ -91,4 +93,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.oculto {
+  display: none;
 }
