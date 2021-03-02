@@ -10,10 +10,7 @@ const ItemDetail = (props) => {
 
   const onAdd = () => {
     alert(
-      "Agregaste al carrito: " +
-        cantidadCarrito +
-        " unidades de " +
-        props.producto.name
+      `Agregaste al carrito: ${cantidadCarrito} unidades de ${props.producto.name}`
     );
   };
 
@@ -22,9 +19,6 @@ const ItemDetail = (props) => {
       <div className="card">
         <img alt="Foto Detail" className="imgDetail" src={props.producto.img} />
         <h3 className="textoCard">{props.producto.name}</h3>
-        <p className="textoCard">
-          <b>Habitaciones: </b> {props.producto.habitaciones}
-        </p>
         <p className="textoCard">
           <b>Baños: </b>
           {props.producto.baños}

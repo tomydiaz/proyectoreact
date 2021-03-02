@@ -7,7 +7,7 @@ import CartContext from "../src/context/CartContext.jsx";
 
 const App = () => {
   return (
-    <CartContext.Provider value={[]}>
+    <CartContext.Provider value={}>
       <BrowserRouter>
         <NavBarComponent />
 
