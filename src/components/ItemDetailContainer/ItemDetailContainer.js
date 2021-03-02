@@ -9,8 +9,6 @@ const ItemDetailContainer = () => {
 
     const { productoId } = useParams();
 
-    //////
-
     const [contador, setContador] = useState(1)
 
     const sumar = (stock) => {
