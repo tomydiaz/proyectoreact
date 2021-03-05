@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 
 const ItemCount = (props) => {
   const toggleArray = document.getElementsByClassName("toggle");
