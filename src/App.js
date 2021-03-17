@@ -4,16 +4,20 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavBarComponent from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContext from "../src/context/CartContext.jsx";
+import { useState } from "react";
 
 const App = () => {
+  const [carrito, setCarrito] = useState([]);
   return (
-    <CartContext.Provider value={[]}>
+    <CartContext.Provider value={carrito}>
       <BrowserRouter>
         <NavBarComponent />
 
         <Switch>
           <Route exact path="/">
-            <h1>Estás en el Inicio</h1>
+            <br />
+            <br />
+            <h1>Bienvenido a la Tienda Cucalambe!</h1>
           </Route>
 
           <Route exact path="/productos">
@@ -29,6 +33,8 @@ const App = () => {
           </Route>
 
           <Route exact path="*">
+            <br />
+            <br />
             <h2 className="notFound">Not Found</h2>
           </Route>
         </Switch>

@@ -15,15 +15,14 @@ p {
 }
 
 .logo {
-  height: 17.15vmin ;
-  width: 16.24vmin ;
+  height: 7em;
   margin-right: 2em;
 }
 
 #cartLogo {
   width: 3em;
   height: 3em;
-  margin-left: 1em;
+  margin-right: 2em;
 }
 
 .button {
@@ -51,7 +50,8 @@ p {
 .cardEnContainer {  
   border:1px black solid;
   padding: 30px;
-  margin: 20px
+  margin: 20px;
+  width: 25%;
 
 }
 

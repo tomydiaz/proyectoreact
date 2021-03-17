@@ -30,7 +30,7 @@ const ItemCount = (props) => {
         </div>
         <button
           onClick={() => {
-            props.agregarCarrito(props.contador);
+            props.onAdd(props.contador, props.producto);
             for (let i = 0; i < toggleArray.length; i++) {
               toggleArray[i].classList.toggle("oculto");
             }
@@ -42,23 +42,19 @@ const ItemCount = (props) => {
       </div>
 
       <div className="terminarCompra toggle oculto">
-        <button
-          onClick={() => {
-            for (let i = 0; i < toggleArray.length; i++) {
-              toggleArray[i].classList.toggle("oculto");
-            }
-          }}
-        >
-          Volver
-        </button>
-        <NavLink to={"/cart"}>
+        <NavLink to={"/productos"}>
           <button
             onClick={() => {
-              props.onAdd();
+              for (let i = 0; i < toggleArray.length; i++) {
+                toggleArray[i].classList.toggle("oculto");
+              }
             }}
           >
-            Termina tu compra ({props.contador} unidad/es)
+            Seguir Comprando
           </button>
+        </NavLink>
+        <NavLink to={"/cart"}>
+          <button>Termina tu compra</button>
         </NavLink>
       </div>
     </>
