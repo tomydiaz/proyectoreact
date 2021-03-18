@@ -3,8 +3,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBarComponent from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import CartContext from "../src/context/CartContext.jsx";
+import CartContext from "./context/CartContext";
 import { useState } from "react";
+import Cart from "./components/CartComponent/Cart";
 
 const App = () => {
   const [carrito, setCarrito] = useState([]);
@@ -30,6 +31,10 @@ const App = () => {
 
           <Route exact path="/detail/:productoId">
             <ItemDetailContainer />
+          </Route>
+
+          <Route exact path="/detail/:productoId">
+            <Cart />
           </Route>
 
           <Route exact path="*">

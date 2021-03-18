@@ -40,7 +40,7 @@ const productList = [
     talle: 38,
     mtsCuadrados: 26,
     img: mono,
-    descripcion: "Pantalon jogging color Negro. Elastizado",
+    descripcion: "Pantalón jogging color Negro. Elastizado",
   },
   {
     id: 4,
@@ -69,12 +69,12 @@ const productList = [
     id: 6,
     stock: 10,
     idCategoria: 3,
-    name: "Pantalon Jean",
+    name: "Pantalón Jean",
     precio: 1800,
     talle: "42",
     mtsCuadrados: 40,
     img: b,
-    descripcion: "Pantalon jean color Azul.",
+    descripcion: "Pantalón jean color Azul.",
   },
 ];
 
