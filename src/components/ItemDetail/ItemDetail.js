@@ -1,8 +1,32 @@
+import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import CartContext from "../../context/CartContext.jsx";
 
 const ItemDetail = (props) => {
+  const { carrito, setCarrito } = useContext(CartContext);
+
   const onAdd = (cantidad, producto) => {
-    alert(`Agregaste al carrito ${cantidad} ${producto.name}`);
+    if (carrito.length !== 0) {
+      carrito.forEach((objeto) => {
+        if (objeto.producto.name === producto.name) {
+          objeto.cantidad += cantidad;
+        } else {
+          const productoYCantidad = {
+            producto: producto,
+            cantidad: cantidad,
+          };
+          setCarrito([...carrito, productoYCantidad]);
+        }
+      });
+    } else {
+      const productoYCantidad = {
+        producto: producto,
+        cantidad: cantidad,
+      };
+      setCarrito([...carrito, productoYCantidad]);
+    }
+
+    localStorage["carritoStorage"] = JSON.stringify(carrito);
   };
 
   return (

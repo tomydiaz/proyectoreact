@@ -3,14 +3,20 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBarComponent from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/CartComponent/Cart";
 import CartContext from "./context/CartContext";
 import { useState } from "react";
-import Cart from "./components/CartComponent/Cart";
 
 const App = () => {
-  const [carrito, setCarrito] = useState([]);
+  const carro = localStorage["carritoStorage"]
+    ? JSON.parse(localStorage["carritoStorage"])
+    : [];
+  const [carrito, setCarrito] = useState(carro);
+
   const value = { carrito, setCarrito };
+
   console.log(carrito);
+
   return (
     <CartContext.Provider value={value}>
       <BrowserRouter>
@@ -35,7 +41,7 @@ const App = () => {
             <ItemDetailContainer />
           </Route>
 
-          <Route exact path="/detail/:productoId">
+          <Route exact path="/cart">
             <Cart />
           </Route>
 

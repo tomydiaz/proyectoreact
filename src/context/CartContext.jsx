@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
 const CartContext = createContext({
-    carrito: [],
-    setCarrito: () => {}
+  carrito: [],
+  setCarrito: () => {},
 });
 
-export default CartContext
+export default CartContext;
