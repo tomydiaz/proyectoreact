@@ -7,15 +7,10 @@ import Cart from "./components/CartComponent/Cart";
 import CartContext from "./context/CartContext";
 import { useState } from "react";
 
-const App = () => {
-  const carro = localStorage["carritoStorage"]
-    ? JSON.parse(localStorage["carritoStorage"])
-    : [];
-  const [carrito, setCarrito] = useState(carro);
+const App = (props) => {
+  const [carrito, setCarrito] = useState(props.carro);
 
   const value = { carrito, setCarrito };
-
-  console.log(carrito);
 
   return (
     <CartContext.Provider value={value}>
@@ -24,9 +19,7 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <br />
-            <br />
-            <h1>Bienvenido a la Tienda Cucalambe!</h1>
+            <h1 className="bienvenido">Bienvenido a la Tienda Cucalambe!</h1>
           </Route>
 
           <Route exact path="/productos">

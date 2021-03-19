@@ -6,9 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+const carro = localStorage["carritoStorage"]
+  ? JSON.parse(localStorage["carritoStorage"])
+  : [];
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App carro={carro} />
   </React.StrictMode>,
   document.getElementById("root")
 );

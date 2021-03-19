@@ -9,8 +9,6 @@ const ItemListContainer = () => {
 
   const { productoId } = useParams();
 
-  const { setCarrito } = useContext(CartContext);
-
   useEffect(() => {
     var productListFiltrada = productList.filter((producto) => {
       if (producto.idCategoria.toString() === productoId) {
@@ -31,10 +29,6 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h2>Este es el Listado de Productos{productoId}</h2>
-      <button onClick={() => setCarrito(["asd"])}>
-        Click para setear carrito
-      </button>
       <ItemList productos={productos} />
     </>
   );

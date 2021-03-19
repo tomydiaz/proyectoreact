@@ -25,9 +25,8 @@ const ItemDetail = (props) => {
       };
       setCarrito([...carrito, productoYCantidad]);
     }
-
-    localStorage["carritoStorage"] = JSON.stringify(carrito);
   };
+  localStorage["carritoStorage"] = JSON.stringify(carrito);
 
   return (
     <>
