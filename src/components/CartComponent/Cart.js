@@ -1,4 +1,5 @@
 import { React, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import CartContext from "../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
 
@@ -10,7 +11,12 @@ const Cart = () => {
   };
 
   return carrito.length == 0 ? (
-    <h2 className="oops">Oops, al parecer tu carrito está vacío!</h2>
+    <>
+      <h2 className="oops">Oops, al parecer tu carrito está vacío!</h2>
+      <NavLink to={"/productos"}>
+        <button className="oops">Ir a comprar</button>
+      </NavLink>
+    </>
   ) : (
     <>
       <div className="cart">

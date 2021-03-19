@@ -39,8 +39,6 @@ const App = (props) => {
           </Route>
 
           <Route exact path="*">
-            <br />
-            <br />
             <h2 className="notFound">Not Found</h2>
           </Route>
         </Switch>
