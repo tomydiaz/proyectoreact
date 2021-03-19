@@ -9,8 +9,10 @@ import Cart from "./components/CartComponent/Cart";
 
 const App = () => {
   const [carrito, setCarrito] = useState([]);
+  const value = { carrito, setCarrito };
+  console.log(carrito);
   return (
-    <CartContext.Provider value={carrito}>
+    <CartContext.Provider value={value}>
       <BrowserRouter>
         <NavBarComponent />
 
