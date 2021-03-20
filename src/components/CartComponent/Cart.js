@@ -10,7 +10,7 @@ const Cart = () => {
     setCarrito([]);
   };
 
-  return carrito.length == 0 ? (
+  return carrito.length === 0 ? (
     <>
       <h2 className="oops">Oops, al parecer tu carrito está vacío!</h2>
       <NavLink to={"/productos"}>

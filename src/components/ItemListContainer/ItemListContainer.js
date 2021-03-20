@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import productList from "../../mocks/productList.js";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import CartContext from "../../context/CartContext.jsx";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);

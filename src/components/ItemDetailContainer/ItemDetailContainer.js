@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   const { productoId } = useParams();
 
-  const [contador, setContador] = useState(1);
+  const [contador, setContador] = useState(0);
 
   const sumar = (stock) => {
     if (contador < stock) {

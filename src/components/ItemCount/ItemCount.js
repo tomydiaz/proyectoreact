@@ -3,8 +3,12 @@ import { NavLink } from "react-router-dom";
 const ItemCount = (props) => {
   const toggleArray = document.getElementsByClassName("toggle");
 
-  return (
-    <>
+  const areaContador =
+    props.stock === 0 ? (
+      <div>
+        <b>Nos quedamos sin stock!</b>
+      </div>
+    ) : (
       <div className="contDetail toggle">
         <b className="stockText">Stock: {props.stock}</b>
         <div className="contCont">
@@ -40,7 +44,11 @@ const ItemCount = (props) => {
           Agregar al carrito
         </button>
       </div>
+    );
 
+  return (
+    <>
+      {areaContador}
       <div className="terminarCompra toggle oculto">
         <NavLink to={"/productos"}>
           <button
@@ -54,7 +62,7 @@ const ItemCount = (props) => {
           </button>
         </NavLink>
         <NavLink to={"/cart"}>
-          <button>Termina tu compra</button>
+          <button>Ir al carrito</button>
         </NavLink>
       </div>
     </>

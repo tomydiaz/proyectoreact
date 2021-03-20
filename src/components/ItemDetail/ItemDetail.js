@@ -10,11 +10,13 @@ const ItemDetail = (props) => {
       carrito.forEach((objeto) => {
         if (objeto.producto.name === producto.name) {
           objeto.cantidad += cantidad;
+          objeto.producto.stock = objeto.producto.stock - cantidad;
         } else {
           const productoYCantidad = {
             producto: producto,
             cantidad: cantidad,
           };
+          objeto.producto.stock = objeto.producto.stock - cantidad;
           setCarrito([...carrito, productoYCantidad]);
         }
       });
@@ -23,6 +25,8 @@ const ItemDetail = (props) => {
         producto: producto,
         cantidad: cantidad,
       };
+      productoYCantidad.producto.stock =
+        productoYCantidad.producto.stock - cantidad;
       setCarrito([...carrito, productoYCantidad]);
     }
   };
