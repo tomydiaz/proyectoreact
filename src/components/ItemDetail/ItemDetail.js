@@ -1,36 +1,21 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import CartContext from "../../context/CartContext.jsx";
+// import CartContext from "../../context/CartContext.jsx";
+import stocks from "../../mocks/stocks";
+// import { useState } from "react";
 
 const ItemDetail = (props) => {
-  const { carrito, setCarrito } = useContext(CartContext);
+  // const { carrito, setCarrito } = useContext(CartContext);
+
+  let stock = stocks[props.productoId - 1].stock;
 
   const onAdd = (cantidad, producto) => {
-    if (carrito.length !== 0) {
-      carrito.forEach((objeto) => {
-        if (objeto.producto.name === producto.name) {
-          objeto.cantidad += cantidad;
-          objeto.producto.stock = objeto.producto.stock - cantidad;
-        } else {
-          const productoYCantidad = {
-            producto: producto,
-            cantidad: cantidad,
-          };
-          objeto.producto.stock = objeto.producto.stock - cantidad;
-          setCarrito([...carrito, productoYCantidad]);
-        }
-      });
-    } else {
-      const productoYCantidad = {
-        producto: producto,
-        cantidad: cantidad,
-      };
-      productoYCantidad.producto.stock =
-        productoYCantidad.producto.stock - cantidad;
-      setCarrito([...carrito, productoYCantidad]);
-    }
+    stock = stock - cantidad;
+    console.log(stock);
+    stocks[props.productoId - 1].stock = stock;
   };
-  localStorage["carritoStorage"] = JSON.stringify(carrito);
+
+  const clearCarrito = () => {};
 
   return (
     <>
@@ -51,7 +36,7 @@ const ItemDetail = (props) => {
         </p>
         <ItemCount
           producto={props.producto}
-          stock={props.producto.stock}
+          stock={stock}
           onAdd={onAdd}
           contador={props.contador}
           sumar={props.sumar}

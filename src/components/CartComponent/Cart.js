@@ -32,7 +32,9 @@ const Cart = () => {
         >
           Vaciar Carrito
         </button>
-        <button className="botonesCart">Finalizar Compra</button>
+        <NavLink to={"/checkout"}>
+          <button className="botonesCart">Finalizar Compra</button>
+        </NavLink>
       </div>
     </>
   );

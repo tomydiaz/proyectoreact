@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
   return (
     <>
       <ItemDetail
-        productoId={productoId}
+        productoId={parseInt(productoId)}
         producto={producto}
         contador={contador}
         sumar={sumar}

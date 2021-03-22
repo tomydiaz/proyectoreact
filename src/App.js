@@ -6,6 +6,8 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/CartComponent/Cart";
 import CartContext from "./context/CartContext";
 import { useState } from "react";
+import FormCheckOut from "./components/FormCheckOut/FormCheckOut";
+import stocks from "./mocks/stocks"; // ---- hacer context y usar en cart e item detail/item count
 
 const App = (props) => {
   const [carrito, setCarrito] = useState(props.carro);
@@ -36,6 +38,10 @@ const App = (props) => {
 
           <Route exact path="/cart">
             <Cart />
+          </Route>
+
+          <Route exact path="/checkout">
+            <FormCheckOut />
           </Route>
 
           <Route exact path="*">

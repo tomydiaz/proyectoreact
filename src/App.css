@@ -17,6 +17,7 @@ p {
 .logo {
   height: 7em;
   margin-right: 2em;
+  margin-bottom: 2rem;
 }
 
 #cartLogo {
@@ -145,4 +146,13 @@ p {
 
 .notFound {
   margin: 30px 0 0 30px;
+}
+
+.buttonContainerEliminar {
+  display: flex;
+}
+
+.buttonEliminar {
+  margin-left: 3.3rem;
+  margin-top: 8px;
 }
