@@ -8,7 +8,6 @@ import b from "../images/b.jpg";
 const productList = [
   {
     id: 1,
-    stock: 12,
     idCategoria: 1,
     name: "Remera Azul",
     precio: 1350,
@@ -21,7 +20,6 @@ const productList = [
   },
   {
     id: 2,
-    stock: 6,
     idCategoria: 2,
     name: "Buzo Negro",
     precio: 2150,
@@ -34,7 +32,6 @@ const productList = [
   },
   {
     id: 3,
-    stock: 8,
     idCategoria: 3,
     name: "Pantalón Jogging Negro",
     precio: 1500,
@@ -46,7 +43,6 @@ const productList = [
   },
   {
     id: 4,
-    stock: 10,
     idCategoria: 1,
     name: "Remera Roja",
     precio: 1200,
@@ -59,7 +55,6 @@ const productList = [
   },
   {
     id: 5,
-    stock: 6,
     idCategoria: 2,
     name: "Buzo Gris",
     precio: 2000,
@@ -71,7 +66,6 @@ const productList = [
   },
   {
     id: 6,
-    stock: 10,
     idCategoria: 3,
     name: "Pantalón Jean",
     precio: 1800,
