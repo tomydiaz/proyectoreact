@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
+// import CartContext from "../../context/CartContext.jsx";
+import { useState } from "react";
 
 const ItemCount = (props) => {
   const toggleArray = document.getElementsByClassName("toggle");
+
+  let [stock, setStock] = useState(props.stock);
 
   const areaContador =
     props.stock === 0 ? (
@@ -10,7 +14,7 @@ const ItemCount = (props) => {
       </div>
     ) : (
       <div className="contDetail toggle">
-        <b className="stockText">Stock: {props.stock}</b>
+        <b className="stockText">Stock: {stock}</b>
         <div className="contCont">
           <button
             onClick={() => {
@@ -25,7 +29,7 @@ const ItemCount = (props) => {
 
           <button
             onClick={() => {
-              props.sumar(props.stock);
+              props.sumar(stock);
             }}
             className="botonCont"
           >
@@ -34,10 +38,13 @@ const ItemCount = (props) => {
         </div>
         <button
           onClick={() => {
+            stock = stock - props.contador;
             props.onAdd(props.contador, props.producto);
             for (let i = 0; i < toggleArray.length; i++) {
               toggleArray[i].classList.toggle("oculto");
             }
+            localStorage["carritoStorage"] = JSON.stringify(props.carrito);
+            localStorage["carritoStorage"] = JSON.stringify(props.carrito);
           }}
           className="botonCarrito"
         >
@@ -56,13 +63,21 @@ const ItemCount = (props) => {
               for (let i = 0; i < toggleArray.length; i++) {
                 toggleArray[i].classList.toggle("oculto");
               }
+              localStorage["carritoStorage"] = JSON.stringify(props.carrito);
+              localStorage["carritoStorage"] = JSON.stringify(props.carrito);
             }}
           >
             Seguir Comprando
           </button>
         </NavLink>
         <NavLink to={"/cart"}>
-          <button>Ir al carrito</button>
+          <button
+            onClick={() => {
+              localStorage["carritoStorage"] = JSON.stringify(props.carrito);
+            }}
+          >
+            Ir al carrito
+          </button>
         </NavLink>
       </div>
     </>

@@ -5,51 +5,57 @@ import NavBarComponent from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/CartComponent/Cart";
 import CartContext from "./context/CartContext";
+import StockContext from "./context/StockContext";
 import { useState } from "react";
 import FormCheckOut from "./components/FormCheckOut/FormCheckOut";
-import stocks from "./mocks/stocks"; // ---- hacer context y usar en cart e item detail/item count
 
 const App = (props) => {
   const [carrito, setCarrito] = useState(props.carro);
 
   const value = { carrito, setCarrito };
 
+  let [stocks, setStocks] = useState(props.stocks);
+
+  let stockks = { stocks, setStocks };
+
   return (
-    <CartContext.Provider value={value}>
-      <BrowserRouter>
-        <NavBarComponent />
+    <StockContext.Provider value={stockks}>
+      <CartContext.Provider value={value}>
+        <BrowserRouter>
+          <NavBarComponent />
 
-        <Switch>
-          <Route exact path="/">
-            <h1 className="bienvenido">Bienvenido a la Tienda Cucalambe!</h1>
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <h1 className="bienvenido">Bienvenido a la Tienda Cucalambe!</h1>
+            </Route>
 
-          <Route exact path="/productos">
-            <ItemListContainer />
-          </Route>
+            <Route exact path="/productos">
+              <ItemListContainer />
+            </Route>
 
-          <Route exact path="/categoria/:productoId">
-            <ItemListContainer />
-          </Route>
+            <Route exact path="/categoria/:productoId">
+              <ItemListContainer />
+            </Route>
 
-          <Route exact path="/detail/:productoId">
-            <ItemDetailContainer />
-          </Route>
+            <Route exact path="/detail/:productoId">
+              <ItemDetailContainer carro={props.carro} />
+            </Route>
 
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
 
-          <Route exact path="/checkout">
-            <FormCheckOut />
-          </Route>
+            <Route exact path="/checkout">
+              <FormCheckOut />
+            </Route>
 
-          <Route exact path="*">
-            <h2 className="notFound">Not Found</h2>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </CartContext.Provider>
+            <Route exact path="*">
+              <h2 className="notFound">Not Found</h2>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </CartContext.Provider>
+    </StockContext.Provider>
   );
 };
 

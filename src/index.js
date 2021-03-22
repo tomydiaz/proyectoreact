@@ -5,14 +5,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import mockStocks from "./mocks/stocks";
+import initialStocks from "./mocks/stocksIniciales";
 
 const carro = localStorage["carritoStorage"]
   ? JSON.parse(localStorage["carritoStorage"])
   : [];
 
+let stocks = localStorage["stocks"]
+  ? JSON.parse(localStorage["stocks"])
+  : mockStocks;
+
+if (carro.length === 0) {
+  stocks = initialStocks;
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App carro={carro} />
+    <App carro={carro} stocks={stocks} />
   </React.StrictMode>,
   document.getElementById("root")
 );
