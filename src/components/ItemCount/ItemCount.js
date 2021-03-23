@@ -5,6 +5,7 @@ import { useState } from "react";
 const ItemCount = (props) => {
   const toggleArray = document.getElementsByClassName("toggle");
 
+  // eslint-disable-next-line
   let [stock, setStock] = useState(props.stock);
 
   const areaContador =
