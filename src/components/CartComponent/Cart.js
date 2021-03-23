@@ -21,6 +21,13 @@ const Cart = () => {
     localStorage.clear();
   };
 
+  let total = 0;
+
+  carrito.forEach((unidad) => {
+    console.log(unidad.producto);
+    total = total + unidad.producto.precio * unidad.cantidad;
+  });
+
   return carrito.length === 0 ? (
     <>
       <h2 className="oops">Oops, al parecer tu carrito está vacío!</h2>
@@ -35,6 +42,7 @@ const Cart = () => {
         {carrito.map((productoYCantidad, index) => {
           return <CartItem key={index} productoYCantidad={productoYCantidad} />;
         })}
+        <h2>Total: ${total}</h2>
         <button
           onClick={() => {
             clearCarrito();
