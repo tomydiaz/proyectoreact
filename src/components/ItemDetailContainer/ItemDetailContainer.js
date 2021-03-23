@@ -13,8 +13,6 @@ const ItemDetailContainer = () => {
 
   const [prod, setProd] = useState([]);
 
-  const db = getFirestore();
-
   const sumar = (stock) => {
     if (contador < stock) {
       setContador(contador + 1);
@@ -28,20 +26,24 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
+    let mounted = true;
+    const db = getFirestore();
+
     const itemCollection = db.collection("productos");
-    itemCollection.get().then((value) => {
-      let aux = value.docs.map((element) => {
-        return element.data();
-      });
-      setProd(aux);
+    if (mounted) {
+      itemCollection.get().then((value) => {
+        let aux = value.docs.map((element) => {
+          return element.data();
+        });
+        setProd(aux);
 
-      prod.forEach((product) => {
-        if (product.id.toString() === productoId) {
-          setProducto(product);
-        }
+        prod.forEach((product) => {
+          if (product.id.toString() === productoId) {
+            setProducto(product);
+          }
+        });
       });
-    });
-
+    }
     //----------
     // prod.forEach((product) => {
     //   if (product.id.toString() === productoId) {
@@ -49,8 +51,8 @@ const ItemDetailContainer = () => {
     //   }
     // });
 
-    return {};
-  }, [productoId, contador, prod, db]);
+    return () => (mounted = false);
+  }, [productoId, contador, prod]);
 
   return (
     <>

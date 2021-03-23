@@ -1,9 +1,17 @@
 import React from "react";
 import { useState, useContext } from "react";
 import CartContext from "../../context/CartContext";
+import { getFirestore } from "../../firebase/index";
+import { useHistory } from "react-router-dom";
 
 const FormCheckOut = () => {
-  const { carrito } = useContext(CartContext);
+  let history = useHistory();
+
+  const { carrito, setCarrito } = useContext(CartContext);
+
+  const db = getFirestore();
+
+  const ordenesCollection = db.collection("ordenes");
 
   let orden;
 
@@ -36,9 +44,14 @@ const FormCheckOut = () => {
         total: total,
       };
 
-      alert(orden);
-      // ----------- acá mandar la orden a firebase
+      ordenesCollection.add(orden);
+
+      setCarrito([]);
       localStorage.clear();
+
+      history.push("/gracias");
+
+      document.location.reload();
     } else {
       alert("Por favor, complete todos los campos");
     }

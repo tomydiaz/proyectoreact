@@ -24,7 +24,6 @@ const Cart = () => {
   let total = 0;
 
   carrito.forEach((unidad) => {
-    console.log(unidad.producto);
     total = total + unidad.producto.precio * unidad.cantidad;
   });
 

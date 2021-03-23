@@ -8,6 +8,7 @@ import CartContext from "./context/CartContext";
 import StockContext from "./context/StockContext";
 import { useState } from "react";
 import FormCheckOut from "./components/FormCheckOut/FormCheckOut";
+import FinCompra from "./components/FinCompra/FinCompra";
 
 const App = (props) => {
   const [carrito, setCarrito] = useState(props.carro);
@@ -47,6 +48,10 @@ const App = (props) => {
 
             <Route exact path="/checkout">
               <FormCheckOut />
+            </Route>
+
+            <Route exact path="/gracias">
+              <FinCompra />
             </Route>
 
             <Route exact path="*">
