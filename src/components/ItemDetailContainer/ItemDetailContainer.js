@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import productList from "../../mocks/productList.js";
+// import productList from "../../mocks/productList.js";
+import { getFirestore } from "../../firebase/index";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -9,6 +10,10 @@ const ItemDetailContainer = () => {
   const { productoId } = useParams();
 
   const [contador, setContador] = useState(0);
+
+  const [prod, setProd] = useState([]);
+
+  const db = getFirestore();
 
   const sumar = (stock) => {
     if (contador < stock) {
@@ -23,14 +28,29 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    productList.forEach((product) => {
-      if (product.id.toString() === productoId) {
-        setProducto(product);
-      }
+    const itemCollection = db.collection("productos");
+    itemCollection.get().then((value) => {
+      let aux = value.docs.map((element) => {
+        return element.data();
+      });
+      setProd(aux);
+
+      prod.forEach((product) => {
+        if (product.id.toString() === productoId) {
+          setProducto(product);
+        }
+      });
     });
 
+    //----------
+    // prod.forEach((product) => {
+    //   if (product.id.toString() === productoId) {
+    //     setProducto(product);
+    //   }
+    // });
+
     return {};
-  }, [productoId, contador]);
+  }, [productoId, contador, prod, db]);
 
   return (
     <>

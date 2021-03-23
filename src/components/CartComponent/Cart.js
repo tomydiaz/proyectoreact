@@ -43,17 +43,24 @@ const Cart = () => {
           return <CartItem key={index} productoYCantidad={productoYCantidad} />;
         })}
         <h2>Total: ${total}</h2>
-        <button
-          onClick={() => {
-            clearCarrito();
-          }}
-          className="botonesCart"
-        >
-          Vaciar Carrito
-        </button>
-        <NavLink to={"/checkout"}>
-          <button className="botonesCart">Finalizar Compra</button>
-        </NavLink>
+        <div className="buttonContainer">
+          <NavLink to={"/productos"}>
+            <button className="botonesCart">Seguir Comprando</button>
+          </NavLink>
+          <NavLink to={"/cart"}>
+            <button
+              onClick={() => {
+                clearCarrito();
+              }}
+              className="botonesCart"
+            >
+              Vaciar Carrito
+            </button>
+          </NavLink>
+          <NavLink to={"/checkout"}>
+            <button className="botonesCart">Finalizar Compra</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

@@ -134,6 +134,9 @@ p {
 .botonesCart {
   margin: 10px;
   display: flex;
+  width: 180px;
+  padding: 10px;
+  justify-content: center;
 }
 
 .oops {
@@ -155,4 +158,8 @@ p {
 .buttonEliminar {
   margin-left: 3.3rem;
   margin-top: 8px;
+}
+
+.buttonContainer {
+  display: flex;
 }
